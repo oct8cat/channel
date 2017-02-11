@@ -1,0 +1,25 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node bin/channeld",
+    "dev": "nodemon -L -w bin -w lib bin/channeld",
+    "doc": "jsdoc -c ./jsdoc.conf.json -t ./node_modules/ink-docstrap/template -d doc -r README.md index.js bin lib"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.16.1",
+    "express": "^4.14.1",
+    "ink-docstrap": "^1.3.0",
+    "jsdoc": "^3.4.3",
+    "mongodb": "^2.2.22",
+    "pug": "^2.0.0-beta11"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
+}

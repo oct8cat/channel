@@ -1,0 +1,15 @@
+version: '2'
+
+services:
+    server:
+        build: ./services/server
+        command: dev
+        volumes:
+            - ./services/server:/opt/channel/server
+    client:
+        build: ./services/client
+        command: dev
+        volumes:
+            - ./services/client:/opt/channel/client
+    proxy:
+        build: ./services/proxy

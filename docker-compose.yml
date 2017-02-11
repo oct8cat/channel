@@ -1,0 +1,31 @@
+version: '2'
+
+services:
+    db:
+        image: mongo
+        container_name: channel_db
+    server:
+        image: oct8cat/channel_server
+        container_name: channel_server
+        depends_on:
+            - db
+        volumes:
+            - uploads:/opt/channel/uploads
+    client:
+        image: oct8cat/channel_client
+        volumes:
+            - assets:/opt/channel/assets
+    proxy:
+        image: oct8cat/channel_proxy
+        depends_on:
+            - server
+            - client
+        volumes:
+            - assets:/opt/channel/assets
+            - uploads:/opt/channel/uploads
+        ports:
+            - 80:80
+
+volumes:
+    assets:
+    uploads:
