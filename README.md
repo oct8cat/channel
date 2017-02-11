@@ -4,6 +4,12 @@
 
 Intentionnaly over-engineered "Hello, world!" aka "playground".
 
+## Requirements
+
+* docker
+* docker-compose
+* make
+
 ## What do?
 
 ```
